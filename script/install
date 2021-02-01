@@ -1,0 +1,22 @@
+#!/bin/bash
+
+set -e
+
+DIR=$(realpath "$(dirname $0)/../")
+BACKUP_DIR=$DIR/backup
+
+mkdir -p $BACKUP_DIR
+
+cd $DIR
+
+for file in *; do
+  [[ "$file" =~ (script|backup|README.md|.*sample$) ]] && continue
+  [ -e ~/.$file -a ! -L ~/.$file ] && mv ~/.$file $BACKUP_DIR
+  ln -fs $DIR/$file ~/.$file
+done
+
+# Install vim-plug as autoload
+curl -sfLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+# Install vim plugins
+vim +PlugUpdate +qall

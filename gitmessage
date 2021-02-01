@@ -1,0 +1,16 @@
+
+
+# 50-caracteres para el asunto del commit
+#
+# 72-caracteres como máximo para la descripción. Esta descricpción
+# debe responder:
+#
+# * ¿Por qué este cambio es necesario?
+# * ¿Cómo resuelve el problema?
+# * ¿El cambio produce algún efecto secundario que debe considerarse?
+#
+# Incluir un enlace al ticket si fuera necesario.
+#
+# Utilizar un asunto significativo evitando descripciones vacías.
+# Si se realizan varios commits con un mismo mensaje unificar todos los
+# commits en uno utilizando rebase.
