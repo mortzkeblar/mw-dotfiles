@@ -64,7 +64,7 @@ autoload -U +X compinit && compinit
 complete -C '~/bin/aws_completer' aws
 
 mkdir -p ~/.zsh/completion
-for app in kubectl helm velero; do
+for app in kubectl helm velero podman; do
   type $app > /dev/null && \
     [ ! -f ~/.zsh/completion/_$app ] && \
     $app completion zsh > ~/.zsh/completion/_$app

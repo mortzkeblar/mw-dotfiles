@@ -123,9 +123,12 @@ set complete+=kspell
 set diffopt+=vertical
 
 set spelllang=es
-let g:gruvbox_italic=1
-colorscheme gruvbox
-set bg=dark
+if &runtimepath =~? "apprentice"
+    colorscheme apprentice
+    let g:gruvbox_italic=1
+    colorscheme gruvbox
+    set bg=dark
+endif
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
