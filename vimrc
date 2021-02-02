@@ -124,11 +124,9 @@ set diffopt+=vertical
 
 set spelllang=es
 
-if &runtimepath =~? "vim-colorschemes"
-    let g:gruvbox_italic=1
-    colorscheme gruvbox
-    set bg=dark
-endif
+let g:gruvbox_italic=1
+silent! colorscheme gruvbox
+set bg=dark
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
