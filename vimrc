@@ -123,8 +123,8 @@ set complete+=kspell
 set diffopt+=vertical
 
 set spelllang=es
-if &runtimepath =~? "apprentice"
-    colorscheme apprentice
+
+if &runtimepath =~? "vim-colorschemes"
     let g:gruvbox_italic=1
     colorscheme gruvbox
     set bg=dark
