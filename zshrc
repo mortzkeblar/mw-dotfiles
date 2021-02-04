@@ -70,4 +70,7 @@ for app in kubectl helm velero podman; do
     $app completion zsh > ~/.zsh/completion/_$app
 done
 
+# Ensure tmux accepts UTF8
+alias tmux="tmux -u"
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
