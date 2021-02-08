@@ -28,6 +28,10 @@ export NVM_DIR="$HOME/.nvm"
 KREW_ROOT=$HOME/.krew
 [ -d $KREW_ROOT/bin ] && export PATH="$KREW_ROOT/bin:$PATH"
 
+# Enable mw vpn connect
+export MW_VPN_ROOT="$HOME/.mw-vpn"
+[ -x $MW_VPN_ROOT/bin ] && export PATH="$MW_VPN_ROOT/bin:$PATH"
+
 source ~/.antigen.zsh/antigen.zsh
 
 antigen use oh-my-zsh

@@ -43,6 +43,6 @@ Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/tComment'
 Plug 'flazz/vim-colorschemes'
-
+Plug 'neomake/neomake'
 
 call plug#end()
