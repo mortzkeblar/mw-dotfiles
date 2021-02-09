@@ -77,4 +77,11 @@ done
 # Ensure tmux accepts UTF8
 alias tmux="tmux -u"
 
+# Alias for common extensions
+
+alias -s {yaml,yml,json,js,rb,py,md}=$EDITOR
+
+# Make zsh Ctrl+U works like in bash
+bindkey \^U backward-kill-line
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
