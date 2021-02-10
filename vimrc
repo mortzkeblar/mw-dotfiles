@@ -3,6 +3,7 @@ set encoding=utf-8
 " Leader
 let mapleader = " "
 
+set tabpagemax=50
 set backspace=2   " Backspace deletes like most programs in insert mode
 set nobackup
 set nowritebackup
