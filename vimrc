@@ -123,7 +123,7 @@ silent! colorscheme gruvbox
 set bg=dark
 
 " Configure neovim to automatically run after 1 second
-call neomake#configure#automake('rw', 1000)
+silent! call neomake#configure#automake('rw', 1000)
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")

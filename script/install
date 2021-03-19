@@ -10,7 +10,7 @@ mkdir -p "$BACKUP_DIR"
 cd "$DIR"
 
 for file in *; do
-  [[ "$file" =~ (script|backup|README.md|.*sample$) ]] && continue
+  [[ "$file" =~ (script|backup|README.*md|.*sample$) ]] && continue
   [ -e "$HOME/.$file" ] && [ ! -L "$HOME/.$file" ] && \
     mv "$HOME/.$file" "$BACKUP_DIR"
   ln -fs "$DIR/$file" "$HOME/.$file"
