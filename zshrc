@@ -81,6 +81,10 @@ done
 # Ensure tmux accepts UTF8
 alias tmux="tmux -u"
 
+# SSH alias with s
+alias s=ssh
+
+
 # Alias for common extensions
 
 alias -s {yaml,yml,json,js,rb,py,md}=$EDITOR
