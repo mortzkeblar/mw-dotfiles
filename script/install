@@ -8,13 +8,18 @@ BACKUP_DIR=$DIR/backup
 mkdir -p "$BACKUP_DIR"
 
 cd "$DIR"
-
 for file in *; do
-  [[ "$file" =~ (script|backup|README.*md|.*sample$) ]] && continue
+  [[ "$file" =~ (ssh|script|$BACKUP_DIR|README.*md|.*sample$) ]] && continue
   [ -e "$HOME/.$file" ] && [ ! -L "$HOME/.$file" ] && \
-    mv "$HOME/.$file" "$BACKUP_DIR"
-  ln -fs "$DIR/$file" "$HOME/.$file"
+    mv "$HOME/.$file" "$BACKUP_DIR" && \
+    ln -fs "$DIR/$file" "$HOME/.$file"
 done
+
+mkdir -p $HOME/.ssh/config.d
+[ -e "$HOME/.ssh/config" ] && [ ! -L "$HOME/.ssh/config" ] && \
+  mkdir -p mv "$BACKUP_DIR/.ssh" && \
+  mv "$HOME/.ssh/config" "$BACKUP_DIR/.ssh/config" && \
+  ln -fs "$DIR/ssh/config" "$HOME/.ssh/config"
 
 # Install vim-plug as autoload
 curl -sfLo ~/.vim/autoload/plug.vim --create-dirs \
