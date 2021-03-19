@@ -39,3 +39,13 @@ configuraciones y proponiéndolas al repositorio raiz, compartiendo experiencias
 que nos hagan más eficientes en el día a día.
 Para ello se puede forkear este repositorio y cualquier contribución realizarla
 como un Pull Request.
+
+## Integración con herramientas propias de mikroways
+
+* zshell autocomplete y configuraciones de ssh comartidas mediante [mw-sshconfig-sync](https://gitlab.com/mikroways/tools/mw-sshconfig-sync)
+  o simplemente usando el cliente de nextcloud.
+* Conexión a las vpn de nuestros clientes usando
+  [mw-vpn](https://gitlab.com/mikroways/tools/mw-vpn/). La idea es que cada
+  usuario configure sus credenciales, pero ahorramos la forma de conectarte
+  agnósticamente a cada cliente. Aun nos queda el autocomplete de este comando.
+
