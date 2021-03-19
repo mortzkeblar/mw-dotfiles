@@ -26,11 +26,15 @@ export NVM_DIR="$HOME/.nvm"
 
 # Enable krew
 KREW_ROOT=$HOME/.krew
-[ -d $KREW_ROOT/bin ] && export PATH="$KREW_ROOT/bin:$PATH"
+[ -d $KREW_ROOT/bin/krew ] && export PATH="$KREW_ROOT/bin:$PATH"
 
 # Enable mw vpn connect
-export MW_VPN_ROOT="$HOME/.mw-vpn"
-[ -x $MW_VPN_ROOT/bin ] && export PATH="$MW_VPN_ROOT/bin:$PATH"
+export MW_VPN_ROOT="$HOME/.mikroways/tools/mw-vpn"
+[ -x $MW_VPN_ROOT/bin/mw-vpn ] && export PATH="$MW_VPN_ROOT/bin:$PATH"
+
+# Enable mw sshconfig sync
+export MW_SSHCONFIG_SYNC_ROOT="$HOME/.mikroways/tools/mw-sshconfig-sync"
+[ -x $MW_SSHCONFIG_SYNC_ROOT/bin/mw-sshconfig-sync ] && export PATH="$MW_SSHCONFIG_SYNC_ROOT/bin:$PATH"
 
 source ~/.antigen.zsh/antigen.zsh
 
