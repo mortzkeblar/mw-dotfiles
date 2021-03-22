@@ -30,7 +30,8 @@ KREW_ROOT=$HOME/.krew
 
 # Enable mw vpn connect
 export MW_VPN_ROOT="$HOME/.mikroways/tools/mw-vpn"
-[ -x $MW_VPN_ROOT/bin/mw-vpn ] && export PATH="$MW_VPN_ROOT/bin:$PATH"
+[ -x $MW_VPN_ROOT/bin/mw-vpn ] && export PATH="$MW_VPN_ROOT/bin:$PATH" && \
+  fpath=($MW_VPN_ROOT/shell-completion/zsh $fpath)
 
 # Enable mw sshconfig sync
 export MW_SSHCONFIG_SYNC_ROOT="$HOME/.mikroways/tools/mw-sshconfig-sync"
