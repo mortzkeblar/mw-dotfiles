@@ -11,8 +11,8 @@ cd "$DIR"
 for file in *; do
   [[ "$file" =~ (ssh|script|$BACKUP_DIR|README.*md|.*sample$) ]] && continue
   [ -e "$HOME/.$file" ] && [ ! -L "$HOME/.$file" ] && \
-    mv "$HOME/.$file" "$BACKUP_DIR" && \
-    ln -fs "$DIR/$file" "$HOME/.$file"
+    mv "$HOME/.$file" "$BACKUP_DIR"
+  ln -fs "$DIR/$file" "$HOME/.$file"
 done
 
 mkdir -p $HOME/.ssh/config.d
