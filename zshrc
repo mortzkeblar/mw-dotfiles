@@ -17,7 +17,7 @@ type rbenv > /dev/null && eval "$(rbenv init -)"
 # Enable goenv
 export GOENV_ROOT="$HOME/.goenv"
 export PATH="$GOENV_ROOT/bin:$PATH"
-type goenv > /dev/null && eval "$(rbenv init -)"
+type goenv > /dev/null && eval "$(goenv init -)"
 type goenv > /dev/null && export PATH="$GOROOT/bin:$PATH:$GOPATH/bin"
 
 # Enable nvm
@@ -26,7 +26,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # Enable krew
 KREW_ROOT=$HOME/.krew
-[ -d $KREW_ROOT/bin/krew ] && export PATH="$KREW_ROOT/bin:$PATH"
+[ -d $KREW_ROOT/bin ] && export PATH="$KREW_ROOT/bin:$PATH"
 
 # Enable mw vpn connect
 export MW_VPN_ROOT="$HOME/.mikroways/tools/mw-vpn"
