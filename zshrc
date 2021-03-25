@@ -85,12 +85,15 @@ alias tmux="tmux -u"
 # SSH alias with s
 alias s=ssh
 
-
 # Alias for common extensions
 
 alias -s {yaml,yml,json,js,rb,py,md}=$EDITOR
 
 # Make zsh Ctrl+U works like in bash
 bindkey \^U backward-kill-line
+
+# Fix GPG AGENT 
+GPG_TTY=$(tty)
+export GPG_TTY
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
