@@ -93,7 +93,6 @@ alias -s {yaml,yml,json,js,rb,py,md}=$EDITOR
 bindkey \^U backward-kill-line
 
 # Fix GPG AGENT 
-GPG_TTY=$(tty)
-export GPG_TTY
+export GPG_TTY=$TTY
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
