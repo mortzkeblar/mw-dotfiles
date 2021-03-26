@@ -37,6 +37,10 @@ export MW_VPN_ROOT="$HOME/.mikroways/tools/mw-vpn"
 export MW_SSHCONFIG_SYNC_ROOT="$HOME/.mikroways/tools/mw-sshconfig-sync"
 [ -x $MW_SSHCONFIG_SYNC_ROOT/bin/mw-sshconfig-sync ] && export PATH="$MW_SSHCONFIG_SYNC_ROOT/bin:$PATH"
 
+# Enable mw gitlab clone
+export MW_GITLAB_CLONE="$HOME/.mikroways/tools/mw-gitlab-clone"
+[ -x $MW_GITLAB_CLONE/mw-gitlab-clone ] && export PATH="$MW_GITLAB_CLONE:$PATH"
+
 source ~/.antigen.zsh/antigen.zsh
 
 antigen use oh-my-zsh
