@@ -49,3 +49,7 @@ como un Pull Request.
   usuario configure sus credenciales, pero ahorramos la forma de conectarte
   agnósticamente a cada cliente. Aun nos queda el autocomplete de este comando.
 
+## Sobre vim
+
+Dejamos algunos [tips sobre vim que hemos configurado con estos
+dotfiles](README.vim.md)
