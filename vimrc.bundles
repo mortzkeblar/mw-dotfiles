@@ -45,5 +45,8 @@ Plug 'vim-scripts/tComment'
 Plug 'flazz/vim-colorschemes'
 Plug 'neomake/neomake'
 Plug 'towolf/vim-helm'
+Plug 'airblade/vim-gitgutter'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
