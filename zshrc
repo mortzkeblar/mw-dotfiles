@@ -99,4 +99,7 @@ bindkey \^U backward-kill-line
 # Fix GPG AGENT 
 export GPG_TTY=$TTY
 
+unsetopt share_history
+
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
