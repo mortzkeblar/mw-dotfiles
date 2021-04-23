@@ -119,11 +119,15 @@ set diffopt+=vertical
 set spelllang=es
 
 let g:gruvbox_italic=1
+let g:gruvbox_guisp_fallback='bg'
 silent! colorscheme gruvbox
 set bg=dark
 
 " Configure neovim to automatically run after 1 second
 silent! call neomake#configure#automake('rw', 1000)
+
+" Set spellcheck to es
+setlocal spell spelllang=es
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
