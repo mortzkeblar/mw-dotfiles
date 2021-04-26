@@ -126,8 +126,9 @@ set bg=dark
 " Configure neovim to automatically run after 1 second
 silent! call neomake#configure#automake('rw', 1000)
 
-" Set spellcheck to es
-setlocal spell spelllang=es
+" Spell-check Markdown files and Git Commit Messages
+autocmd FileType markdown setlocal spell
+autocmd FileType gitcommit setlocal spell
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
