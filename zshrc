@@ -58,6 +58,7 @@ antigen bundle git-extras
 antigen bundle pip
 antigen bundle command-not-found
 antigen bundle kubectl
+antigen bundle johanhaleby/kubetail
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
