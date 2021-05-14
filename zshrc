@@ -2,7 +2,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/bin:$HOME/.mikroways/bin:$PATH"
 
 # Use vim-gtk3 as EDITOR
 export EDITOR=vim.gtk3
