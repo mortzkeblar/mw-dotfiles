@@ -1,0 +1,47 @@
+export PATH="$HOME/bin:$HOME/.mikroways/bin:$PATH"
+
+# -----------------------------------------------------------------------------
+# Mikroways tools
+# -----------------------------------------------------------------------------
+# Enable mw vpn connect
+export MW_VPN_ROOT="$HOME/.mikroways/tools/mw-vpn"
+[[ -x $MW_VPN_ROOT/bin/mw-vpn ]] && export PATH="$MW_VPN_ROOT/bin:$PATH" && \
+  fpath=($MW_VPN_ROOT/shell-completion/zsh $fpath)
+
+# Enable mw sshconfig sync
+export MW_SSHCONFIG_SYNC_ROOT="$HOME/.mikroways/tools/mw-sshconfig-sync"
+[[ -x $MW_SSHCONFIG_SYNC_ROOT/bin/mw-sshconfig-sync ]] && export PATH="$MW_SSHCONFIG_SYNC_ROOT/bin:$PATH"
+
+# Enable mw gitlab clone
+export MW_GITLAB_CLONE="$HOME/.mikroways/tools/mw-gitlab-clone"
+[[ -x $MW_GITLAB_CLONE/mw-gitlab-clone ]] && export PATH="$MW_GITLAB_CLONE:$PATH"
+
+# Enable md2pdf
+export MW_MD2PDF="$HOME/.mikroways/tools/md2pdf"
+[[ -x $MW_MD2PDF/bin/md2pdf ]] && export PATH="$MW_MD2PDF/bin:$PATH"
+
+# -----------------------------------------------------------------------------
+# Enable krew
+# -----------------------------------------------------------------------------
+KREW_ROOT=$HOME/.krew
+[[ -d $KREW_ROOT/bin ]] && export PATH="$KREW_ROOT/bin:$PATH"
+
+# -----------------------------------------------------------------------------
+# Autocomplete
+# -----------------------------------------------------------------------------
+if type aws_completer > /dev/null ; then
+  autoload bashcompinit && bashcompinit
+  autoload -Uz compinit && compinit
+  complete -C 'aws_completer' aws
+fi
+
+mkdir -p ~/.zsh/completion
+for app in kubectl helm velero podman kustomize clusterctl kind eksctl; do
+  type $app > /dev/null && \
+    [ ! -f ~/.zsh/completion/_$app ] && \
+    $app completion zsh > ~/.zsh/completion/_$app
+done
+
+type restic > /dev/null && \
+  [ ! -f ~/.zsh/completion/_restic ] && \
+  restic generate --zsh-completion ~/.zsh/completion/_restic

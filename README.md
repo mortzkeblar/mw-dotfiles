@@ -40,6 +40,19 @@ que nos hagan más eficientes en el día a día.
 Para ello se puede forkear este repositorio y cualquier contribución realizarla
 como un Pull Request.
 
+### Personalizacions de Mikroways y Usuario
+
+Las personalizaciones se pueden hacer en casacada de la siguiente forma:
+
+1. Primero se setean los valores por defecto en `.zshrc`
+1. Luego se personalizacion los valores por defecto para Mikroways usando
+   `.zshrc.mikroways`
+1. Finalmente, un usuario puede crear un archivo `.zshrc.user` que idealmente
+   conviene no versionarlo en este repositorio con las personalizaciones que
+   desea sobreescrbir
+1. Respecto a los bundles de antigen, es posible aplicar personalizaciones con:
+  `.zshrc.mikroways.antigen.bundles` y `.zshrc.user.antigen.bundles`
+
 ## Integración con herramientas propias de mikroways
 
 * zshell autocomplete y configuraciones de ssh comartidas mediante [mw-sshconfig-sync](https://gitlab.com/mikroways/tools/mw-sshconfig-sync)
