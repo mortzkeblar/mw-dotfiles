@@ -66,5 +66,8 @@ unsetopt share_history
 # Fuzzy find
 [[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
 
+# Load custom autocmplete
+fpath=($HOME/.zsh/completion $fpath)
+
 # Load Other User personalizations
 [ -f ~/.zshrc.user ] && source ~/.zshrc.user
