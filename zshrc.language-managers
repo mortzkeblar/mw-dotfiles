@@ -3,13 +3,13 @@
 # -----------------------------------------------------------------------------
 # Enable rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
-type rbenv > /dev/null && eval "$(rbenv init -)"
+type rbenv > /dev/null && eval "$(rbenv init - zsh)"
 
 # Enable goenv
 export GOENV_ROOT="$HOME/.goenv"
 export PATH="$GOENV_ROOT/bin:$PATH"
-type goenv > /dev/null && eval "$(goenv init -)"
-type goenv > /dev/null && export PATH="$GOROOT/bin:$PATH:$GOPATH/bin"
+type goenv > /dev/null && eval "$(goenv init - zsh)"
+type goenv > /dev/null && export PATH="$GOENV_ROOT/bin:$PATH:$GOPATH/bin"
 
 # Enable nvm
 export NVM_DIR="$HOME/.nvm"
