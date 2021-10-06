@@ -19,7 +19,7 @@ alias tmux="tmux -u"
 alias s=ssh
 
 # Use vim-gtk3 as EDITOR
-export EDITOR=vim.gtk3
+export EDITOR=vim
 
 # Ctrl+U works like bash
 bindkey "^u" backward-kill-line
