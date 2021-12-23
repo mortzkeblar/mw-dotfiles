@@ -20,6 +20,10 @@ export MW_GITLAB_CLONE="$HOME/.mikroways/tools/mw-gitlab-clone"
 export MW_MD2PDF="$HOME/.mikroways/tools/md2pdf"
 [[ -x $MW_MD2PDF/bin/md2pdf ]] && export PATH="$MW_MD2PDF/bin:$PATH"
 
+# Enable grant ssh access
+export GRANT_SSH_ACCESS_ROOT="$HOME/.mikroways/tools/mw-grant-ssh-access"
+[[ -x $GRANT_SSH_ACCESS_ROOT/bin/mw-grant-ssh-access ]] && export PATH="$GRANT_SSH_ACCESS_ROOT/bin:$PATH"
+
 # -----------------------------------------------------------------------------
 # Enable krew
 # -----------------------------------------------------------------------------
