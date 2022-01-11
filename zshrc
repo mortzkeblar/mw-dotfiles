@@ -44,6 +44,7 @@ antigen bundle git-extras
 antigen bundle pip
 antigen bundle command-not-found
 antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle Sparragus/zsh-auto-nvm-use
 antigen theme romkatv/powerlevel10k
 
 # Mikroways bundles
