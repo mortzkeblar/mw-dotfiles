@@ -8,6 +8,17 @@ export MW_VPN_ROOT="$HOME/.mikroways/tools/mw-vpn"
 [[ -x $MW_VPN_ROOT/bin/mw-vpn ]] && export PATH="$MW_VPN_ROOT/bin:$PATH" && \
   fpath=($MW_VPN_ROOT/shell-completion/zsh $fpath)
 
+# Enable mw k8s
+
+export MW_K8S_ROOT="$HOME/.mikroways/tools/mw-k8s"
+[[ -x $MW_K8S_ROOT/bin/mw-k8s ]] && export PATH="$MW_K8S_ROOT/bin:$PATH" && \
+  fpath=($MW_K8S_ROOT/shell-completion/zsh $fpath)
+
+# Enable mw aws profile
+export MW_AWS_PROFILE_ROOT="$HOME/.mikroways/tools/mw-aws-profile"
+[[ -x $MW_AWS_PROFILE_ROOT/bin/mw-aws-profile ]] && export PATH="$MW_AWS_PROFILE_ROOT/bin:$PATH" && \
+  fpath=($MW_AWS_PROFILE_ROOT/shell-completion/zsh $fpath)
+
 # Enable mw sshconfig sync
 export MW_SSHCONFIG_SYNC_ROOT="$HOME/.mikroways/tools/mw-sshconfig-sync"
 [[ -x $MW_SSHCONFIG_SYNC_ROOT/bin/mw-sshconfig-sync ]] && export PATH="$MW_SSHCONFIG_SYNC_ROOT/bin:$PATH"
