@@ -1,7 +1,13 @@
 # Tips sobre vim
 
 Vim está configurado con varios plugins que simplifican su uso, pero a veces no
-conocemos algunos truquitos que son útiles con el uso de vim.
+conocemos algunos truquitos que son útiles con el uso de vim. Los plugins se
+instalan con [vim-plug](https://github.com/junegunn/vim-plug).
+
+> Es importante destacar que un plugin útil, es el [iamcco/markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim).
+> Sin embargo, no lo incluimos acá porque su instalación falla la primera vez
+> y en instalaciones desatendidas no es posible que la instalación de dotfiles
+> termine.
 
 ## Grabar acciones repetitivas
 
