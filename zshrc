@@ -40,6 +40,8 @@ plugins=(bundler aliases direnv git git-extras pip command-not-found)
 antigen bundle zsh-users/zsh-syntax-highlighting
 type nvm > /dev/null && antigen bundle Sparragus/zsh-auto-nvm-use
 
+antigen theme romkatv/powerlevel10k
+
 # Mikroways bundles
 [[ -f ~/.zshrc.mikroways.antigen.bundles ]] && \
   source ~/.zshrc.mikroways.antigen.bundles

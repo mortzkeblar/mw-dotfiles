@@ -1,2 +1,3 @@
-plugins+=(ansible aws docker docker-compose kubectl)
+# Will install kubetail as antigen plugin
 antigen bundle johanhaleby/kubetail
+plugins+=(ansible aws docker docker-compose kubectl)
