@@ -32,20 +32,13 @@ export GPG_TTY=$TTY
 
 source ~/.antigen.zsh/antigen.zsh
 
-antigen use oh-my-zsh
+antigen use ohmyzsh/ohmyzsh
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
-#
-antigen bundle bundler
-antigen bundle common-alias
-antigen bundle direnv
-antigen bundle git
-antigen bundle git-extras
-antigen bundle pip
-antigen bundle command-not-found
+plugins=(bundler aliases direnv git git-extras pip command-not-found)
+
 antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle Sparragus/zsh-auto-nvm-use
-antigen theme romkatv/powerlevel10k
+type nvm > /dev/null && antigen bundle Sparragus/zsh-auto-nvm-use
 
 # Mikroways bundles
 [[ -f ~/.zshrc.mikroways.antigen.bundles ]] && \

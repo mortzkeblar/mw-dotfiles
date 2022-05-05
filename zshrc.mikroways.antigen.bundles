@@ -1,7 +1,2 @@
-antigen bundle ansible
-antigen bundle aws
-antigen bundle docker
-antigen bundle docker-compose
-antigen bundle kubectl
+plugins+=(ansible aws docker docker-compose kubectl)
 antigen bundle johanhaleby/kubetail
-
