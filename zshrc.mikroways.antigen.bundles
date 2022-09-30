@@ -1,3 +1,6 @@
 # Will install kubetail as antigen plugin
 antigen bundle johanhaleby/kubetail
 plugins+=(ansible aws docker docker-compose kubectl terraform vagrant)
+
+# Will add clipcopy and clippaste commands to manage clpibloard
+antigen bundle wang817/zsh-clipboard
