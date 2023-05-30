@@ -5,9 +5,6 @@ fi
 # The following loads are required at this point so antigen bundles can find
 # tools installed for mikroways. If this dotfiles are going to be installed
 # without ansible role from mikroways, some utilities shall be installed
-#
-# Load language managers
-[[ -f ~/.zshrc.language-managers ]] && source ~/.zshrc.language-managers
 
 # Load Mikroways personalizations
 [[ -f ~/.zshrc.mikroways ]] && source ~/.zshrc.mikroways
@@ -35,7 +32,7 @@ source ~/.antigen.zsh/antigen.zsh
 antigen use ohmyzsh/ohmyzsh
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
-plugins=(bundler aliases direnv git git-extras pip command-not-found)
+plugins=(aliases git git-extras pip command-not-found)
 
 antigen bundle zsh-users/zsh-syntax-highlighting
 
@@ -63,6 +60,9 @@ unsetopt share_history
 
 # Load custom autocmplete
 fpath=($HOME/.zsh/completion $fpath)
+
+# Load language managers
+[[ -f ~/.zshrc.language-managers ]] && source ~/.zshrc.language-managers
 
 # Load Other User personalizations
 [ -f ~/.zshrc.user ] && source ~/.zshrc.user
