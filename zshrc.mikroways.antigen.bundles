@@ -3,7 +3,7 @@ antigen bundle johanhaleby/kubetail
 plugins+=(asdf ansible aws docker docker-compose kubectl terraform vagrant asdf direnv)
 
 # Will add clipcopy and clippaste commands to manage clpibloard
-antigen bundle wang817/zsh-clipboard
+antigen bundle twang817/zsh-clipboard
 
 mw-fix-kube-completion() {
   rm -f "$ZSH_CACHE_DIR/completions/_kubectl"
