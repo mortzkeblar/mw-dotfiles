@@ -6,7 +6,7 @@
 # If you dont want to load this extentions, set MW_LANGUAGE_MANAGERS_ENABLED to
 # any value different than true
 
-MW_LANGUAGE_MANAGERS_ENABLED=${MW_LANGUAGE_MANAGERS_ENABLED:-true}
+MW_LANGUAGE_MANAGERS_ENABLED=${MW_LANGUAGE_MANAGERS_ENABLED:-false}
 
 if [ "$MW_LANGUAGE_MANAGERS_ENABLED" = "true" ]; then
 
