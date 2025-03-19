@@ -61,8 +61,6 @@ unsetopt share_history
 # Load custom autocmplete
 fpath=($HOME/.zsh/completion $fpath)
 
-# Load language managers
-[[ -f ~/.zshrc.language-managers ]] && source ~/.zshrc.language-managers
 
 # Load Other User personalizations
 [ -f ~/.zshrc.user ] && source ~/.zshrc.user
