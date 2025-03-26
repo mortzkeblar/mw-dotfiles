@@ -1,6 +1,3 @@
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
 
 # The following loads are required at this point so antigen bundles can find
 # tools installed for mikroways. If this dotfiles are going to be installed
@@ -64,5 +61,12 @@ fpath=($HOME/.zsh/completion $fpath)
 # Load language managers
 [[ -f ~/.zshrc.language-managers ]] && source ~/.zshrc.language-managers
 
+
+[[ -f ~/.zshrc.mikroways.updates ]] && source ~/.zshrc.mikroways.updates
+
 # Load Other User personalizations
 [ -f ~/.zshrc.user ] && source ~/.zshrc.user
+
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
