@@ -3,7 +3,12 @@ MW_TOOLS_DIR=$HOME/.mikroways/tools
 WATCHED_DIRS=(${(f)"$(find $HOME/.mikroways -type d -name .git -exec dirname {} \;)"})
 
 # Last check timestamp file
-GIT_UPDATE_CHECK_FILE="$(dirname $0)/.last_git_check"
+GIT_UPDATE_CHECK_FILE="${HOME}/.mw-tools-upgrade.lock"
+
+function mw-tools-force-upgrade() {
+  rm -f $GIT_UPDATE_CHECK_FILE
+  mw-tools-upgrade
+}
 
 # Check for updates
 function mw-tools-upgrade() {
@@ -63,6 +68,8 @@ function mw-tools-upgrade() {
 
 
 }
+
+
 
 # Ejecutar la función en cada inicio de shell
 mw-tools-upgrade
