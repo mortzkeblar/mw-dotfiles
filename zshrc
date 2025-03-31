@@ -1,10 +1,7 @@
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# Set PATH to use asdf
+export ASDF_DATA_DIR="${ASDF_DATA_DIR:-$HOME/.asdf}"
+path=("$ASDF_DATA_DIR/bin" $path)
 
-# The following loads are required at this point so antigen bundles can find
-# tools installed for mikroways. If this dotfiles are going to be installed
-# without ansible role from mikroways, some utilities shall be installed
 
 # Load Mikroways personalizations
 [[ -f ~/.zshrc.mikroways ]] && source ~/.zshrc.mikroways
@@ -62,5 +59,12 @@ unsetopt share_history
 fpath=($HOME/.zsh/completion $fpath)
 
 
+
+[[ -f ~/.zshrc.mikroways.updates ]] && source ~/.zshrc.mikroways.updates
+
 # Load Other User personalizations
 [ -f ~/.zshrc.user ] && source ~/.zshrc.user
+
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
