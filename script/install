@@ -28,7 +28,7 @@ curl -sfLo "$HOME/.vim/autoload/plug.vim" --create-dirs \
 # Install vim spell check es
 for i in es.latin1.spl es.latin1.sug es.utf-8.spl es.utf-8.sug; do
   curl -sfLo "$HOME/.vim/spell/$i" --create-dirs \
-    "http://ftp.vim.org/vim/runtime/spell/$i"
+    "https://ftp.nluug.nl/pub/vim/runtime/spell/$i"
 done
 # Install vim plugins
 vim +PlugUpdate +qall

@@ -19,7 +19,7 @@ export EDITOR=vim
 bindkey "^u" backward-kill-line
 
 # Alias for common extensions
-alias -s {yaml,yml,json,js,rb,py,md}=$EDITOR
+alias -s {yaml,yml,json,md}=$EDITOR
 
 # Fix GPG AGENT 
 export GPG_TTY=$TTY
@@ -58,8 +58,6 @@ unsetopt share_history
 # Load custom autocmplete
 fpath=($HOME/.zsh/completion $fpath)
 
-# Load language managers
-[[ -f ~/.zshrc.language-managers ]] && source ~/.zshrc.language-managers
 
 
 [[ -f ~/.zshrc.mikroways.updates ]] && source ~/.zshrc.mikroways.updates

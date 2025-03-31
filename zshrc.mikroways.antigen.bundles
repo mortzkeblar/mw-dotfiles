@@ -3,7 +3,6 @@ antigen bundle johanhaleby/kubetail
 
 plugins+=(asdf ansible aws docker docker-compose kubectl terraform vagrant direnv)
 
-
 mw-fix-kube-completion() {
   rm -f "$ZSH_CACHE_DIR/completions/_kubectl"
   kubectl completion zsh 2> /dev/null >| "$ZSH_CACHE_DIR/completions/_kubectl"
