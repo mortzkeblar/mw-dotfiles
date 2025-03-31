@@ -1,7 +1,7 @@
+# Set PATH to use asdf
+export ASDF_DATA_DIR="${ASDF_DATA_DIR:-$HOME/.asdf}"
+path=("$ASDF_DATA_DIR/bin" $path)
 
-# The following loads are required at this point so antigen bundles can find
-# tools installed for mikroways. If this dotfiles are going to be installed
-# without ansible role from mikroways, some utilities shall be installed
 
 # Load Mikroways personalizations
 [[ -f ~/.zshrc.mikroways ]] && source ~/.zshrc.mikroways
