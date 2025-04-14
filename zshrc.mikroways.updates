@@ -20,6 +20,7 @@ function mw-tools-upgrade() {
   if [[ -f "$GIT_UPDATE_CHECK_FILE" && $(cat "$GIT_UPDATE_CHECK_FILE") == "$today" ]]; then
     return
   fi
+  pushd . > /dev/null
   echo "Checking for Mikroways tools updates...."
 
   echo "$today" > "$GIT_UPDATE_CHECK_FILE"
@@ -65,7 +66,7 @@ function mw-tools-upgrade() {
       echo "  ❌ Omit updates for Mikroways tools"
     fi
   fi
-
+  popd > /dev/null
 
 }
 
