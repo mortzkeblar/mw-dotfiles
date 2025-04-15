@@ -41,6 +41,7 @@ function mw-tools-upgrade() {
   done
   if [[ "$REPOS_WITH_LOCAL_UPDATES" -ne 0 ]]; then
     echo "Update check aborted because local changes must be resolved"
+    popd > /dev/null
     return
   fi
   for repo_dir in "${WATCHED_DIRS[@]}"; do
