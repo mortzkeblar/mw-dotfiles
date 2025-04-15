@@ -20,46 +20,48 @@ function mw-tools-upgrade() {
   if [[ -f "$GIT_UPDATE_CHECK_FILE" && $(cat "$GIT_UPDATE_CHECK_FILE") == "$today" ]]; then
     return
   fi
-  pushd . > /dev/null
   echo "Checking for Mikroways tools updates...."
 
   echo "$today" > "$GIT_UPDATE_CHECK_FILE"
   for repo_dir in "${WATCHED_DIRS[@]}"; do
-    cd "$repo_dir" || continue
+    pushd "$repo_dir" > /dev/null || continue
     IS_MAIN_BRANCH=$(LC_ALL=C git rev-parse --abbrev-ref HEAD | grep -iE "^main|master$")
     if [[ -z "$IS_MAIN_BRANCH" ]]; then
       echo "  📢 Repository is not using main branch for $repo_dir. Please review"
     fi
+    popd > /dev/null
   done
   for repo_dir in "${WATCHED_DIRS[@]}"; do
-    cd "$repo_dir" || continue
+    pushd "$repo_dir" > /dev/null || continue
     LOCAL_UPDATES=$(LC_ALL=C git status | grep -E "modified:|Untracked")
     if [[ ! -z "$LOCAL_UPDATES" ]]; then
       echo "  🚩 There are local updates for $repo_dir. Please commit"
       REPOS_WITH_LOCAL_UPDATES=1
     fi
+    popd > /dev/null
   done
   if [[ "$REPOS_WITH_LOCAL_UPDATES" -ne 0 ]]; then
     echo "Update check aborted because local changes must be resolved"
-    popd > /dev/null
     return
   fi
   for repo_dir in "${WATCHED_DIRS[@]}"; do
-    cd "$repo_dir" || continue
+    pushd "$repo_dir" > /dev/null || continue
     git remote update &>/dev/null
     UPDATES=$(LC_ALL=C git status -uno | grep "Your branch is behind")
     if [[ ! -z "$UPDATES" ]]; then
       echo "  ⚠️  There are updates for $repo_dir"
       REPOS_TO_UPDATE+=( $repo_dir )
     fi
+    popd > /dev/null
   done
   if [[ "${#REPOS_TO_UPDATE[@]}" -ne 0 ]]; then
     echo "¿Upgrade mikroways tools? (Y/N): "
     read -r answer
     if [[ "$( echo $answer | tr '[:upper:]' '[:lower:]')" == "y" ]]; then
       for repo_dir in "${REPOS_TO_UPDATE[@]}"; do
-        cd "$repo_dir" || continue
+        pushd "$repo_dir" > /dev/null || continue
         git pull
+        popd > /dev/null
       done
       echo
       echo "  ✔️  Mikroways tools updated"
@@ -67,8 +69,6 @@ function mw-tools-upgrade() {
       echo "  ❌ Omit updates for Mikroways tools"
     fi
   fi
-  popd > /dev/null
-
 }
 
 
