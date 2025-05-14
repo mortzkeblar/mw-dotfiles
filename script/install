@@ -31,4 +31,4 @@ for i in es.latin1.spl es.latin1.sug es.utf-8.spl es.utf-8.sug; do
     "https://ftp.nluug.nl/pub/vim/runtime/spell/$i"
 done
 # Install vim plugins
-vim +PlugUpdate +qall
+vim +PlugClean +PlugUpdate +qall

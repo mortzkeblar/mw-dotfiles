@@ -15,26 +15,19 @@ let g:has_async = v:version >= 800 || has('nvim')
 call plug#begin('~/.vim/bundle')
 
 " Define bundles via Github repos
-Plug 'christoomey/vim-run-interactive'
-
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'fatih/vim-go'
-Plug 'janko-m/vim-test'
 Plug 'pangloss/vim-javascript'
-Plug 'pbrisbin/vim-mkdir'
-Plug 'tpope/vim-bundler'
+" Plug 'pbrisbin/vim-mkdir'
 Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-projectionist'
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-rake'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-rhubarb'
+" Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
 Plug 'vim-ruby/vim-ruby'
-Plug 'vim-scripts/tComment'
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'vim-scripts/tComment'
 Plug 'flazz/vim-colorschemes'
 Plug 'neomake/neomake'
 Plug 'towolf/vim-helm'
