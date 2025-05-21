@@ -135,4 +135,4 @@ if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
 endif
 
-set mouse=a
+set mouse-=a
