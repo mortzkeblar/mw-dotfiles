@@ -8,6 +8,11 @@ export MW_VPN_ROOT="$HOME/.mikroways/tools/mw-vpn"
 [[ -x $MW_VPN_ROOT/bin/mw-vpn ]] && export PATH="$MW_VPN_ROOT/bin:$PATH" && \
   fpath=($MW_VPN_ROOT/shell-completion/zsh $fpath)
 
+# Enable mw create project
+export MW_CREATE_PROJECT_ROOT="$HOME/.mikroways/tools/mw-create-project"
+[[ -x $MW_CREATE_PROJECT_ROOT/bin/mw-create-project ]] && export PATH="$MW_CREATE_PROJECT_ROOT/bin:$PATH" && \
+  fpath=($MW_CREATE_PROJECT_ROOT/shell-completion/zsh $fpath)
+
 # Enable mw k8s
 
 export MW_K8S_ROOT="$HOME/.mikroways/tools/mw-k8s"
